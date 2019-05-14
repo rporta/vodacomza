@@ -1,0 +1,98 @@
+{
+    "id": "vza",
+    "logPrefix": "vodacomza",
+    "serviceName": "Decoupling Web Service - Vodacom Sudafrica",
+    "port": 8058,
+    "sponsorId": 58,
+    "heartBeatInterval": 120,
+    "db": {
+        "heartBeat": "sp_heartbeats",
+        "setMO": "sp_insert_entrada",
+        "setMT": "sp_insert_salida",
+        "isActive": "opratelinfo.dbo.sp_Select_SuscripcionActiva_Paquete",
+        "getActiveSubscriptions": "opratelinfo.dbo.sp_Select_SuscripcionActiva",
+        "getActiveSubscription": "opratelinfo.dbo.sp_Select_SuscripcionActiva_Paquete",
+        "setPresubscription" : "opratelinfo.dbo.sp_Replace_Presuscripcion",
+        "getPresubscription" : "opratelinfo.dbo.sp_Select_Presuscripcion",
+        "setSubscriptionMap" : "opratelinfo.dbo.sp_Replace_SubscriptionMap",
+        "setSubscription": "opratelInfo.dbo.sp_Insert_Suscripcion",
+        "updateMT": "sp_Update_Salida",
+        "getMDS": "opratelinfo.dbo.sp_Select_Presuscripcion",
+        "setMonto": "sp_Insert_SalidaMonto"
+    },
+    "mw": {
+        "timeoutMsec" : 12000,
+        "__host": "https://fusion-test.vodacom.co.za:7443/MED/ERDecouplingInterface_v1r3",
+        "__host": "fusion-test.vodacom.co.za",
+        "host": "fusion.vodacom.co.za",
+        "port": "7443",
+        "path": "/MED/ERDecouplingInterface_v1r3",
+        "user": "DCB_OPRATEL",
+        "password": "d1UVWt3xCSvs1v",
+        "__passwordOld": "NmtU8LMThQ",
+        "__passwordDev": "K9]v(5\"8"
+    },
+    "callback": {
+        "user": "DCB_OPRATEL",
+        "password": "d1UVWt3xCSvs1v",
+        "__passwordOld": "NmtU8LMThQ"
+    },
+    "paquete": {
+        "790": {
+            "__commentPaquete": "diario",
+            "aplicacionid": 1157,
+            "medioid": 568,
+            "paquetesCheck": [790,791],
+            "assetId": "todosgamers",
+            "contentName": "tg",
+            "serviceid": "vc-opratel-todosgamers-01",
+            "simplepackageid": "p-opratel-todosgamers-c-01",
+            "packages": [
+                "p-opratel-todosgamers-c-01__X__package:p-opratel-todosgamers-c-01_TAX_3_1003_999_999_999_TRIAL_*_*_false_false_*",
+                "p-opratel-todosgamers-c-01__X__package:p-opratel-todosgamers-c-01_TAX_3_8_999_999_999_*_*_*_false_false_*"
+            ],
+            "fallback": ""
+        },
+        "791": {
+            "__commentPaquete": "semanal",
+            "aplicacionid": 1158,
+            "medioid": 568,
+            "paquetesCheck": [790,791],
+            "assetId": "todosgamers",
+            "contentName": "tg",
+            "serviceid": "vc-opratel-todosgamers-01",
+            "simplepackageid": "p-opratel-todosgamers-c-01",
+            "packages": [
+                "p-opratel-todosgamers-c-01__X__package:p-opratel-todosgamers-c-01_TAX_3_2_999_999_999_TRIAL_*_*_false_false_*",
+                "p-opratel-todosgamers-c-01__X__package:p-opratel-todosgamers-c-01_TAX_3_2_999_999_999_*_*_*_false_false_*"
+            ],
+            "fallback": "790"
+        },
+        "reverse": {
+            "p-opratel-todosgamers-c-01__X__package:p-opratel-todosgamers-c-01_TAX_3_1003_999_999_999_TRIAL_*_*_false_false_*": "790",
+            "p-opratel-todosgamers-c-01__X__package:p-opratel-todosgamers-c-01_TAX_3_8_999_999_999_*_*_*_false_false_*": "790",
+            "p-opratel-todosgamers-c-01__X__package:p-opratel-todosgamers-c-01_TAX_3_2_999_999_999_TRIAL_*_*_false_false_*": "791",
+            "p-opratel-todosgamers-c-01__X__package:p-opratel-todosgamers-c-01_TAX_3_2_999_999_999_*_*_*_false_false_*": "791"
+        }
+    },
+    "maxApiQueueReprocess": 15,
+    "apiQueueFailureEmailRecipients": "it@opratel.com",
+    "partnerApi": {
+        "common": {
+            "apiUrl": "api.hera.opratel.com",
+            "apiPort": "80",
+            "apiPath": "/billing/addUser",
+            "apiDeactivatePath": "/billing/deactivateUser",
+            "apiKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJzdWIiOiIxIiwiYXVkIjoiT3ByYXRlbCIsInllYXIiOiIyMDE1IiwiZXhwIjoiMjUzNDAyMjY0NjI4IiwiaXNzIjoiaHR0cDpcL1wvZGV2MS5hcGkub3ByYXRlbC5jb21cL3Rva2VuIiwiaWF0IjoiMTQzMTY5ODIyOSIsIm5iZiI6IjE0MzE2OTgyMjkiLCJqdGkiOiJmYjlkNDkxNDBjOTMwOGVkNDdhMTYwMzQwZmVlMTIxYyJ9.Yzk3NTQyODQxNTRiOTgzODA0NjE2Yjk3YTI5YTY3ZWJlZDlmODE0ZDZhNjU1YzZmODgyNjFjOGMxOWY3MDYyYQ"
+        },
+        "1157": {
+            "__urlContenido": "http://www.todosgamers.com/confirm/{SHA1}",
+            "type": "tg",
+            "enabled": 1
+        },
+        "1158": {
+            "type": "tg",
+            "enabled": 1
+        }
+    }
+}

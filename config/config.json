@@ -1,0 +1,45 @@
+{
+	"mssql": {
+		"server": "zeus",
+		"database": "opratelcenter",
+		"user": "sa",
+		"password": "millonarios",
+    	"pool": {
+        	"min": 1,
+        	"max": 50,
+        	"idleTimeoutMillis": 30000
+    	}
+	},
+	"redis": {
+		"db": 11,
+		"setExpire": 1440,
+		"readCount": 50,
+		"readInterval": 5000,
+		"readReprocessInterval": 60000
+	},
+	"programInterval": 10,
+	"heartBeatInterval": 120,
+	"__db": {
+		"getMT": "sp_Select_SalidaBatch_BGW",
+		"updateMT": "sp_Update_Salida",
+		"setMT": "sp_Insert_Salida",
+		"updateIntervalo": "OpratelInfo.dbo.sp_Update_Suscripcion_Intervalo",
+		"updateCobro": "OpratelInfo.dbo.sp_Update_UltimoCobro",
+		"insertMonto": "sp_Insert_SalidaMonto",
+		"setSubscription": "opratelinfo.dbo.sp_insert_suscripcion",
+		"setPresubscription" : "opratelinfo.dbo.sp_Replace_Presuscripcion",
+		"getActiveSubscription": "opratelinfo.dbo.sp_Select_SuscripcionActiva_Paquete",
+		"isActive": "opratelinfo.dbo.sp_Select_SuscripcionActiva_Paquete",
+		"getMDS": "opratelinfo.dbo.sp_Select_Presuscripcion",
+		"setMonto": "sp_Insert_SalidaMonto"
+	},
+	"estadoEsIdDayOff": 36,
+	"estadoEsIdSent": 24,
+	"estadoEsIdChargeOk": 24,
+	"server":{
+		"whitelist": [ "::ffff:127.0.0.1",["::ffff:192.168.1.1","::ffff:192.168.1.254"], ["::ffff:192.168.0.1","::ffff:192.168.0.254"], "::ffff:181.28.43.54", "::ffff:52.7.233.104" ,"::ffff:181.229.106.166", "::ffff:41.1.224.115", "::ffff:196.11.146.61", "::ffff:196.11.146.79", "::ffff:196.11.146.100", "::ffff:196.28.152.135"]
+	},
+	"operator": {
+		"vodacomza": "vodacomza.json"
+	}
+}
