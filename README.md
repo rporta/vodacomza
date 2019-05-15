@@ -5,7 +5,7 @@
 ***
 rs step 2  caso exitoso : El suscriptor ha sido suscrito. Suscripción activa o suspendida devuelta  
 rs step 2 : rs || err  
-**subscription status:**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**subscription status:**  
 
         + 1 : Active
         + 2 : Reserved
