@@ -34,7 +34,7 @@ El socio debe indicar al agente de usuario del navegador web que abra el enlace 
 ***
 rs step 4:  
 &nbsp;&nbsp;&nbsp;&nbsp;Redirigir el navegador a la página web del Socio  
-&nbsp;&nbsp;&nbsp;&nbsp;**Redirect Responses Codes (URL - Redirect):**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Redirect Responses Codes (URL - Redirect):**
 
         + 0 ACCEPTED : Successfully subscribed
         + 1 DECLINED : Customer declined
