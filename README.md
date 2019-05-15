@@ -55,3 +55,15 @@ Activar una respuesta de devolución de llamada en segundo plano
 ### Vodacom informa al socio DCB si el suscriptor rechaza la solicitud de suscripción
 ***
 **step 5** envio respuesta al cliente json( rs | err )
+
+***
+***
+***
+# temas pendientes :
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**methods que no se implementaron:**    
+        +Inactivate Subscription API
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**no se sabe en que momento se dispara la respuesta:**    
+        +Purchase Response (Success)
+
+
