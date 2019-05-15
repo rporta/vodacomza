@@ -4,7 +4,7 @@
 **step 2** ejecuto helpers.getServiceOffers() 
 ***
 rs step 2 : rs || err  
-rs step 2  caso exitoso : El suscriptor ha sido suscrito. Suscripción activa o suspendida devuelta  
+rs step 2  **rs** : El suscriptor ha sido suscrito. Suscripción activa o suspendida devuelta  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**subscription status:**  
 
         + 1 : Active
@@ -24,7 +24,7 @@ rs step 2  caso exitoso : El suscriptor ha sido suscrito. Suscripción activa o 
         + 30 : Goodwill Credit Failed
 
 &nbsp;&nbsp;&nbsp;&nbsp;aca solo implemento status 1 como rs para step3, el resto va a final respuesta al cliente json( err )  
-Err : El suscriptor no ha sido suscrito todavía. Se devuelven las opciones de compra. (va a final respuesta al cliente json( err ))
+rs step 2 **Err** : El suscriptor no ha sido suscrito todavía. Se devuelven las opciones de compra. (va a final respuesta al cliente json( err ))
 ***
 El socio debe indicar al agente de usuario del navegador web que abra el enlace de la URL específica que se previsto. Esto es para asegurar que Vodacom valida la transacción recibida del Socio.
 
