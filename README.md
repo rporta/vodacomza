@@ -23,7 +23,7 @@ rs step 2 : rs || err
         + 26 : Rolled Back
         + 30 : Goodwill Credit Failed
 
-aca solo implemento status 1 como rs para step3, el resto va a final respuesta al cliente json( err )  
+&nbsp;&nbsp;&nbsp;&nbsp;aca solo implemento status 1 como rs para step3, el resto va a final respuesta al cliente json( err )  
 Err : El suscriptor no ha sido suscrito todavía. Se devuelven las opciones de compra. (va a final respuesta al cliente json( err ))
 ***
 El socio debe indicar al agente de usuario del navegador web que abra el enlace de la URL específica que se previsto. Esto es para asegurar que Vodacom valida la transacción recibida del Socio.
@@ -33,8 +33,8 @@ El socio debe indicar al agente de usuario del navegador web que abra el enlace 
 **step 4** ejecuto helpers.chargeRequestWhitEncriptedMsisdn()
 ***
 rs step 4:  
-    Redirigir el navegador a la página web del Socio  
-        **Redirect Responses Codes (URL - Redirect):**
+&nbsp;&nbsp;&nbsp;&nbsp;Redirigir el navegador a la página web del Socio  
+&nbsp;&nbsp;&nbsp;&nbsp;**Redirect Responses Codes (URL - Redirect):**
 
         + 0 ACCEPTED : Successfully subscribed
         + 1 DECLINED : Customer declined
@@ -48,9 +48,9 @@ rs step 4:
         + 9 BLOCKED : Admin lock flag set
 
 Activar una respuesta de devolución de llamada en segundo plano  
-        -timeout transacción completa: 3 minutos. Se enviará una notificación de timeout.  
-           si : !transacción completa  
-               entonces : volver al socio tercero  
+&nbsp;&nbsp;&nbsp;&nbsp;-timeout transacción completa: 3 minutos. Se enviará una notificación de timeout.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;si : !transacción completa  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entonces : volver al socio tercero  
 >### Vodacom informa al socio DCB si el suscriptor rechaza la solicitud de suscripción
 ***
 **step 5** envio respuesta al cliente json( rs | err )
