@@ -51,6 +51,7 @@ Activar una respuesta de devolución de llamada en segundo plano
 &nbsp;&nbsp;&nbsp;&nbsp;-timeout transacción completa: 3 minutos. Se enviará una notificación de timeout.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;si : !transacción completa  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entonces : volver al socio tercero  
->### Vodacom informa al socio DCB si el suscriptor rechaza la solicitud de suscripción
+
+### Vodacom informa al socio DCB si el suscriptor rechaza la solicitud de suscripción
 ***
 **step 5** envio respuesta al cliente json( rs | err )
