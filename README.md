@@ -61,9 +61,11 @@ Activar una respuesta de devolución de llamada en segundo plano
 ***
 # temas pendientes :
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**methods que no se implementaron:**  
+
         +Inactivate Subscription API
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**no se sabe en que momento se dispara la respuesta:**  
+
         +Purchase Response (Success)
 
 
