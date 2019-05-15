@@ -3,8 +3,8 @@
 step 1 preparo parametros para helpers.getServiceOffers()
 step 2 ejecuto helpers.getServiceOffers() 
 ******************************************************************************************************
-    rs step 2  caso exitoso : El suscriptor ha sido suscrito. Suscripción activa o suspendida devuelta
-    rs step 2 : rs || err
+rs step 2  caso exitoso : El suscriptor ha sido suscrito. Suscripción activa o suspendida devuelta
+rs step 2 : rs || err
     **subscription status:**
 
         + 1 : Active
@@ -23,11 +23,11 @@ step 2 ejecuto helpers.getServiceOffers()
         + 26 : Rolled Back
         + 30 : Goodwill Credit Failed
 
-    aca solo implemento status 1 como rs para step3, el resto va a final respuesta al cliente json( err )
+aca solo implemento status 1 como rs para step3, el resto va a final respuesta al cliente json( err )
 
-    Err : El suscriptor no ha sido suscrito todavía. Se devuelven las opciones de compra. (va a final respuesta al cliente json( err ))
+Err : El suscriptor no ha sido suscrito todavía. Se devuelven las opciones de compra. (va a final respuesta al cliente json( err ))
 
-    El socio debe indicar al agente de usuario del navegador web que abra el enlace de la URL específica que se
+El socio debe indicar al agente de usuario del navegador web que abra el enlace de la URL específica que se
     previsto. Esto es para asegurar que Vodacom valida la transacción recibida del Socio.
 ******************************************************************************************************
 step 3 preparo parametros para helpers.chargeRequestWhitEncriptedMsisdn()
@@ -49,11 +49,10 @@ step 4 rs :
         + 9 BLOCKED : Admin lock flag set 
 
 
-
-    Activar una respuesta de devolución de llamada en segundo plano
-        -timeout transacción completa: 3 minutos. Se enviará una notificación de timeout.
-            si  !transacción completa 
-                volver al socio tercero
+Activar una respuesta de devolución de llamada en segundo plano
+    -timeout transacción completa: 3 minutos. Se enviará una notificación de timeout.
+        si : !transacción completa 
+            entonces : volver al socio tercero
 
 >## Vodacom informa al socio DCB si el suscriptor rechaza la solicitud de suscripción
 
