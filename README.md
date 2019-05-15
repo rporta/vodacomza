@@ -3,8 +3,8 @@
 
 **step 2** ejecuto helpers.getServiceOffers() 
 ***
-rs step 2  caso exitoso : El suscriptor ha sido suscrito. Suscripción activa o suspendida devuelta  
 rs step 2 : rs || err  
+rs step 2  caso exitoso : El suscriptor ha sido suscrito. Suscripción activa o suspendida devuelta  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**subscription status:**  
 
         + 1 : Active
