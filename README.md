@@ -1,5 +1,4 @@
 # flujo subscription_ni.js :
-
 ######step 1 preparo parametros para helpers.getServiceOffers()
 ######step 2 ejecuto helpers.getServiceOffers() 
 ***
