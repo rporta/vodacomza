@@ -5,7 +5,8 @@ step 2 ejecuto helpers.getServiceOffers()
 ***
 rs step 2  caso exitoso : El suscriptor ha sido suscrito. Suscripción activa o suspendida devuelta  
 rs step 2 : rs || err  
-**subscription status:**
+**subscription status:**  
+
         + 1 : Active
         + 2 : Reserved
         + 3 : Being Provisioned
@@ -21,6 +22,7 @@ rs step 2 : rs || err
         + 24 : Cancelled
         + 26 : Rolled Back
         + 30 : Goodwill Credit Failed
+
 aca solo implemento status 1 como rs para step3, el resto va a final respuesta al cliente json( err )  
 Err : El suscriptor no ha sido suscrito todavía. Se devuelven las opciones de compra. (va a final respuesta al cliente json( err ))
 ***
@@ -33,6 +35,7 @@ step 4 ejecuto helpers.chargeRequestWhitEncriptedMsisdn()
 step 4 rs :  
     Redirigir el navegador a la página web del Socio  
         **Redirect Responses Codes (URL - Redirect):**
+        
         + 0 ACCEPTED : Successfully subscribed
         + 1 DECLINED : Customer declined
         + 2 FRAUD : Fraud detected 
