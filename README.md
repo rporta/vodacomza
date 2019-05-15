@@ -26,6 +26,6 @@ rs step 2  **rs** : El suscriptor ha sido suscrito. Suscripción activa o suspen
 &nbsp;&nbsp;&nbsp;&nbsp;aca solo implemento status 1 como rs para step3, el resto va a final respuesta al cliente json( err )  
 rs step 2 **Err** : El suscriptor no ha sido suscrito todavía. Se devuelven las opciones de compra. (va a final respuesta al cliente json( err ))
 ***
-**step final** : Envio respuesta al servidor
+**step final** : Envio respuesta al servidor json(**rs** || **err**)
 
 
