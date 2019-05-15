@@ -3,7 +3,7 @@
 
 **step 2** ejecuto helpers.getServiceOffers() 
 ***
-rs step 2 : **rs** || **err**  
+rs step 2 : **rs** || **err  
 rs step 2  **rs** : El suscriptor ha sido suscrito. Suscripción activa o suspendida devuelta  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**subscription status:**  
 
@@ -26,46 +26,6 @@ rs step 2  **rs** : El suscriptor ha sido suscrito. Suscripción activa o suspen
 &nbsp;&nbsp;&nbsp;&nbsp;aca solo implemento status 1 como rs para step3, el resto va a final respuesta al cliente json( err )  
 rs step 2 **Err** : El suscriptor no ha sido suscrito todavía. Se devuelven las opciones de compra. (va a final respuesta al cliente json( err ))
 ***
-El socio debe indicar al agente de usuario del navegador web que abra el enlace de la URL específica que se previsto. Esto es para asegurar que Vodacom valida la transacción recibida del Socio.
-
-**step 3** preparo parametros para helpers.chargeRequestWhitEncriptedMsisdn()
-
-**step 4** ejecuto helpers.chargeRequestWhitEncriptedMsisdn()
-***
-rs step 4:  
-&nbsp;&nbsp;&nbsp;&nbsp;Redirigir el navegador a la página web del Socio  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Redirect Responses Codes (URL - Redirect):**
-
-        + 0 ACCEPTED : Successfully subscribed
-        + 1 DECLINED : Customer declined
-        + 2 FRAUD : Fraud detected 
-        + 3 ERROR : An error has occurred 
-        + 4 BLOCKED : Content block flag set
-        + 5 ERROR : Insufficient funds 
-        + 6 ERROR : Timeout waiting for response 
-        + 7 ERROR : Already subscribed to service 
-        + 8 ERROR : Invalid request 
-        + 9 BLOCKED : Admin lock flag set
-
-Activar una respuesta de devolución de llamada en segundo plano  
-&nbsp;&nbsp;&nbsp;&nbsp;-timeout transacción completa: 3 minutos. Se enviará una notificación de timeout.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;si : !transacción completa  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entonces : volver al socio tercero  
-
-### Vodacom informa al socio DCB si el suscriptor rechaza la solicitud de suscripción
-***
-**step 5** envio respuesta al cliente json( rs | err )
-
-***
-***
-***
-# temas pendientes :
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**methods que no se implementaron:**  
-
-        + Inactivate Subscription API
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**no se sabe en que momento se dispara la respuesta:**  
-
-        + Purchase Response (Success)
+**step final** : Envio respuesta al servidor
 
 
