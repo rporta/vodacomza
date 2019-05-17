@@ -46,26 +46,6 @@ router.post('/', function(req, res, next) {
                             cb(true, data);
                         }
                     });
-                },
-                (data, cb) => {
-
-                    //step 3 preparo parametros para helpers.chargeRequestWhitEncriptedMsisdn()
-                    data.paramsChargeRequestWhitEncriptedMsisdn = new Object();
-                    data.paramsChargeRequestWhitEncriptedMsisdn.partnerId = "";
-                    data.paramsChargeRequestWhitEncriptedMsisdn.token = "";
-                    data.paramsChargeRequestWhitEncriptedMsisdn.packageId = data.rsGetServiceOffers['er-response']['payload']['get-service-offers-response']['service']['subscription']['package-id']['_'];
-                    data.paramsChargeRequestWhitEncriptedMsisdn.clientTxnId = "";
-                    data.paramsChargeRequestWhitEncriptedMsisdn.partnerRedirectUrl = "";
-                },
-                (data, cb) => {
-                    //step 4 ejecuto helpers.chargeRequestWhitEncriptedMsisdn()
-                    helpers.chargeRequestWhitEncriptedMsisdn(data.paramsChargeRequestWhitEncriptedMsisdn, function(err, rs) {
-                        if (!err) {
-                            cb(null, data);
-                        } else {
-                            cb(true, data);
-                        }
-                    });
                 }
             ],
             (err, rs) => {
@@ -73,7 +53,7 @@ router.post('/', function(req, res, next) {
                 if (!err) {
                     logger.info('Subscription NI inserted. Msisdn: ' + rs.msisdn + ' | SubscriptionId: ' + rs.suscripcionid + ' | ExternalUserId: ' + rs.externalUserId);
                     logger.debug('Subscribe - Record: ' + JSON.stringify(rs));
-                    responseObj.statusCode = '0';
+                    responseObj.statusCode = '1';
                     responseObj.statusMsg = 'Process successful';
                 } else {
                     if (typeof rs.isActive != 'undefined' && rs.isActive) {

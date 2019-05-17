@@ -18,31 +18,49 @@ var partnerApi = require('./libs/partnerApi');
 
 var args = process.argv.slice(2);
 var operatorName = (typeof args[0] != 'undefined') ? args[0] : false;
-if (!operatorName){
+if (!operatorName) {
     console.log('Debe especificar operador');
     process.exit();
 }
 
-if (typeof config.operator[operatorName] == 'undefined'){
+if (typeof config.operator[operatorName] == 'undefined') {
     console.log('Operador invalido');
     process.exit();
-}else{
+} else {
     var operator = require(__dirname + '/config/' + config.operator[operatorName]);
 }
 
-var logger = new (winston.Logger)({
+var logger = new(winston.Logger)({
     transports: [
-	//new (winston.transports.Console)({ timestamp: function() { return utils.now(); }, level: 'debug'}),
-        new (winston.transports.File)({ timestamp: function() { return utils.now(); }, filename: 'logs/'+ operatorName +'_access.log', json: false })
+        //new (winston.transports.Console)({ timestamp: function() { return utils.now(); }, level: 'debug'}),
+        new(winston.transports.File)({
+            timestamp: function() {
+                return utils.now();
+            },
+            filename: 'logs/' + operatorName + '_access.log',
+            json: false
+        })
     ]
 });
-var mssqlLogger = new (winston.Logger)({
-    transports: [ new (winston.transports.File)({ timestamp: function() { return utils.now(); }, filename: 'logs/'+ operatorName +'_mssql_access.log', json: false })]
+var mssqlLogger = new(winston.Logger)({
+    transports: [new(winston.transports.File)({
+        timestamp: function() {
+            return utils.now();
+        },
+        filename: 'logs/' + operatorName + '_mssql_access.log',
+        json: false
+    })]
 });
-var redisLogger = new (winston.Logger)({
-    transports: [ 
+var redisLogger = new(winston.Logger)({
+    transports: [
         //new (winston.transports.Console)({ timestamp: function() { return utils.now(); }, colorize: true, level: 'debug'}),
-        new (winston.transports.File)({ timestamp: function() { return utils.now(); }, filename: 'logs/'+operatorName+'_server_redis_access.log', json: false })
+        new(winston.transports.File)({
+            timestamp: function() {
+                return utils.now();
+            },
+            filename: 'logs/' + operatorName + '_server_redis_access.log',
+            json: false
+        })
     ]
 });
 
@@ -62,14 +80,16 @@ app.use(bodyParser.json());
 // app.use(xmlparser());
 
 //IPs permititas!
-app.use(ipfilter(config.server.whitelist, { mode: 'allow' }));
+app.use(ipfilter(config.server.whitelist, {
+    mode: 'allow'
+}));
 
 
 const options = {
-  key: fs.readFileSync("/var/node/vodacomza/certs/CertMultiDomain.key"),
-  cert: fs.readFileSync("/var/node/vodacomza/certs/CertMultiDomainCHAIN_Nginx_new.crt")
+    key: fs.readFileSync("/var/node/vodacomza/certs/CertMultiDomain.key"),
+    cert: fs.readFileSync("/var/node/vodacomza/certs/CertMultiDomainCHAIN_Nginx_new.crt")
 };
-https.createServer(options, app).listen(operator.port, function(){
+https.createServer(options, app).listen(operator.port, function() {
     logger.info('Web Service started on port ' + operator.port);
 });
 
@@ -107,6 +127,9 @@ app.locals.partnerApi = partnerApi;
 var subscribe = require('./routes/subscribe');
 app.use('/subscribe/', subscribe);
 
+var subscribe_ni = require('./routes/subscribe_ni');
+app.use('/subscribe_ni/', subscribe_ni);
+
 var unsubscribe = require('./routes/unsubscribe');
 app.use('/unsubscribe/', unsubscribe);
 
@@ -116,14 +139,19 @@ app.use('/modifycharging/', modifycharging);
 var notification = require('./routes/notification');
 app.use('/notification/', notification);
 
-app.use(function(req, res, next){
-	res.status(404).send('404: Page not Found');
+app.use(function(req, res, next) {
+    res.status(404).send('404: Page not Found');
 });
 
-process.on('SIGINT', function(){ doExit(); });
-process.on('uncaughtException', function(err){ logger.debug('Uncaught Exception: ' + err); doExit(); });
+process.on('SIGINT', function() {
+    doExit();
+});
+process.on('uncaughtException', function(err) {
+    logger.debug('Uncaught Exception: ' + err);
+    doExit();
+});
 
-function doExit(){
-	logger.error('Server shutdown unexpectedly');
-	process.exit();
+function doExit() {
+    logger.error('Server shutdown unexpectedly');
+    process.exit();
 }
